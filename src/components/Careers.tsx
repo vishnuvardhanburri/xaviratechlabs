@@ -514,7 +514,7 @@ export function Careers() {
         </motion.div>
 
         {/* Division Tabs */}
-        <Tabs value={activeDivision} onValueChange={(v) => { setActiveDivision(v); setSelectedJob(null); }} className="w-full">
+        <Tabs value={activeDivision} onValueChange={(v: string) => { setActiveDivision(v); setSelectedJob(null); }} className="w-full">
           <TabsList className="w-full grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4 bg-transparent mb-8">
             {divisions.map((division) => {
               const isActive = division.id === activeDivision;
