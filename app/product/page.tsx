@@ -3,7 +3,6 @@ import { AgentsSystem } from '@/components/AgentsSystem';
 import { SystemPreview } from '@/components/SystemPreview';
 import { Comparison } from '@/components/Comparison';
 import { LandingFooter } from '@/components/LandingFooter';
-import { motion } from 'motion/react';
 
 export const metadata = {
   title: 'Product | Xavira',

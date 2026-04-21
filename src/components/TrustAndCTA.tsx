@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'motion/react';
 import { CheckCircle2, Lock, Zap, Shield } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';

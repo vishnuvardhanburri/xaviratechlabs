@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'motion/react';
 import { Activity, CheckCircle2, AlertCircle } from 'lucide-react';
 

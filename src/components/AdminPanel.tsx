@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Calendar, Tag, MessageSquare, RefreshCw, Download, Phone } from 'lucide-react';

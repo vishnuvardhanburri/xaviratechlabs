@@ -1,3 +1,4 @@
+"use client";
 import { Menu, X, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';

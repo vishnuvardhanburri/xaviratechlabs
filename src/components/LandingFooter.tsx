@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';

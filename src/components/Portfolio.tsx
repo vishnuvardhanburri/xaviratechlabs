@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Shield, TrendingUp, Palette, X, Check, ExternalLink, ShoppingCart, Stethoscope, GraduationCap, Building2, Zap } from 'lucide-react';

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'motion/react';
 import { Bot, Mail, Send, MessageSquare, Brain, Wrench } from 'lucide-react';
 
