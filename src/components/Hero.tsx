@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion } from './motion-mock';
 import { ArrowRight, Play } from 'lucide-react';
 
 export function Hero() {
@@ -20,19 +20,15 @@ export function Hero() {
         {/* Animated gradient orbs */}
         <motion.div
           className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
-          animate={{
             y: [0, 50, 0],
             opacity: [0.3, 0.5, 0.3],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
           className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-3xl"
-          animate={{
             y: [0, -50, 0],
             opacity: [0.3, 0.5, 0.3],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
@@ -41,24 +37,15 @@ export function Hero() {
         {/* Left side - Text */}
         <motion.div
           className="flex-1 pr-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div
             className="inline-block px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 mb-6"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
           >
             <p className="text-sm text-cyan-300 font-medium">Built by Systems Engineers</p>
           </motion.div>
 
           <motion.h1
             className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
           >
             Autonomous Outbound
             <br />
@@ -71,9 +58,6 @@ export function Hero() {
 
           <motion.div
             className="space-y-2 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="text-lg text-gray-300 flex items-center gap-3">
               <span className="text-cyan-400">✓</span> Input to output, without silent failure
@@ -89,9 +73,6 @@ export function Hero() {
           {/* CTAs */}
           <motion.div
             className="flex gap-4 flex-wrap"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
           >
             <a href="https://cal.com/vishnuvardhanburri/30min" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2 group inline-flex">
               Start 10-Day Proof
@@ -107,9 +88,6 @@ export function Hero() {
         {/* Right side - Dashboard Preview */}
         <motion.div
           className="flex-1 hidden lg:block"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="relative">
             {/* Glow effect */}
@@ -136,8 +114,6 @@ export function Hero() {
                   <p className="text-gray-400 text-sm mb-2">Emails Sent</p>
                   <motion.p
                     className="text-3xl font-bold text-cyan-400"
-                    animate={{ opacity: [1, 0.7, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
                   >
                     12.4K
                   </motion.p>
@@ -146,8 +122,6 @@ export function Hero() {
                   <p className="text-gray-400 text-sm mb-2">Reply Rate</p>
                   <motion.p
                     className="text-3xl font-bold text-blue-400"
-                    animate={{ opacity: [1, 0.7, 1] }}
-                    transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
                   >
                     34%
                   </motion.p>
@@ -156,8 +130,6 @@ export function Hero() {
                   <p className="text-gray-400 text-sm mb-2">Domain Health</p>
                   <motion.p
                     className="text-3xl font-bold text-green-400"
-                    animate={{ opacity: [1, 0.7, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
                   >
                     99%
                   </motion.p>
@@ -171,8 +143,6 @@ export function Hero() {
                   <motion.div
                     key={i}
                     className="text-xs text-gray-400 py-2 flex items-center gap-2"
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                     {i === 1 && 'Agents orchestrating outbound campaign'}
@@ -189,16 +159,12 @@ export function Hero() {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="flex flex-col items-center gap-2">
           <p className="text-gray-400 text-sm">Scroll to see why we're different</p>
           <div className="w-6 h-10 border border-cyan-500/30 rounded-full flex justify-center p-2">
             <motion.div
               className="w-1 h-2 bg-cyan-400 rounded-full"
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
             />
           </div>
         </div>

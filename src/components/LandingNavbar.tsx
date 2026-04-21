@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -9,9 +10,6 @@ export function LandingNavbar() {
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
     >
       <div className="px-8 lg:px-16 max-w-7xl mx-auto flex items-center justify-between h-20">
         {/* Logo */}
@@ -65,8 +63,6 @@ export function LandingNavbar() {
         {isOpen && (
           <motion.div
             className="absolute top-20 left-0 right-0 bg-gradient-to-b from-[#0b0b0f] to-[#1a1a2e] border-b border-cyan-500/20 p-8 flex flex-col gap-4 lg:hidden"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
           >
             <a href="#how-it-works" className="text-gray-300 hover:text-cyan-300 transition-colors">
               Why Different

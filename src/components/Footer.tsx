@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Linkedin, Github, Mail } from 'lucide-react';
 
 interface FooterProps {

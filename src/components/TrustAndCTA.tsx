@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { CheckCircle2, Lock, Zap, Shield } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 
@@ -11,10 +12,6 @@ export function TrustAndCTA() {
         {/* Section header */}
         <motion.div
           className="mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
             Built on <span className="text-cyan-400">Trust</span>
@@ -57,10 +54,6 @@ export function TrustAndCTA() {
               <motion.div
                 key={i}
                 className="group relative"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${pillar.color} rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
 
@@ -87,38 +80,28 @@ export function TrustAndCTA() {
           {/* Animated gradient background */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e]/80 via-[#0b0b0f]/80 to-[#0b0b0f]"
-            animate={{
               backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
             }}
-            transition={{ duration: 20, repeat: Infinity }}
           />
 
           {/* Animated orbs */}
           <motion.div
             className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
-            animate={{
               y: [0, 100, 0],
               opacity: [0.2, 0.4, 0.2],
             }}
-            transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
-            animate={{
               y: [0, -100, 0],
               opacity: [0.2, 0.4, 0.2],
             }}
-            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
           />
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Deploy Your
@@ -135,10 +118,6 @@ export function TrustAndCTA() {
             {/* CTA buttons */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
             >
               <a href="https://cal.com/vishnuvardhanburri/30min" target="_blank" rel="noopener noreferrer" className="px-8 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-2 group inline-flex">
                 Start Proof Today
@@ -153,10 +132,6 @@ export function TrustAndCTA() {
             {/* Trust badges */}
             <motion.div
               className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-cyan-400" />
@@ -178,10 +153,6 @@ export function TrustAndCTA() {
           {/* Bottom CTA detail */}
           <motion.div
             className="mt-20 pt-12 border-t border-cyan-500/20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
           >
             <p className="text-gray-400 mb-6">
               Questions? Let's talk. Book a personalized demo with our team.

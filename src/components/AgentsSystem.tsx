@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Bot, Mail, Send, MessageSquare, Brain, Wrench } from 'lucide-react';
 
 export function AgentsSystem() {
@@ -47,10 +48,6 @@ export function AgentsSystem() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
           AI Agent <span className="text-cyan-400">Network</span>
@@ -68,10 +65,6 @@ export function AgentsSystem() {
             <motion.div
               key={i}
               className="group relative cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
               {/* Glow effect */}
@@ -105,8 +98,6 @@ export function AgentsSystem() {
                 {/* Hover arrow */}
                 <motion.div
                   className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
                 >
                   <span className="text-cyan-400 text-xl">→</span>
                 </motion.div>
@@ -119,10 +110,6 @@ export function AgentsSystem() {
       {/* How they work together */}
       <motion.div
         className="mt-20 relative group"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -145,10 +132,6 @@ export function AgentsSystem() {
                   <motion.div
                     key={i}
                     className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 rounded-full bg-cyan-400" />
                     <p className="text-gray-300">{item}</p>
@@ -180,10 +163,6 @@ export function AgentsSystem() {
                 ].map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <p className="text-cyan-400 font-bold text-sm">{item.metric}</p>
                     <p className="text-gray-400 text-sm">{item.detail}</p>

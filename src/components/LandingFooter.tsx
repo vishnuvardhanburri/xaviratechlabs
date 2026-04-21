@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Mail, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,10 +13,6 @@ export function LandingFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-12 border-b border-cyan-500/10">
           {/* Brand */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center">
@@ -33,10 +30,6 @@ export function LandingFooter() {
 
           {/* Product */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
           >
             <h4 className="text-white font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -65,10 +58,6 @@ export function LandingFooter() {
 
           {/* Company */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -97,10 +86,6 @@ export function LandingFooter() {
 
           {/* Connect */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
           >
             <h4 className="text-white font-bold mb-4">Connect</h4>
             <div className="flex gap-4">

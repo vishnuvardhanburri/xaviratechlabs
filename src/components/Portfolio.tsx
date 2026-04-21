@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Shield, TrendingUp, Palette, X, Check, ExternalLink, ShoppingCart, Stethoscope, GraduationCap, Building2, Zap } from 'lucide-react';
@@ -238,9 +239,6 @@ export function Portfolio({ setCurrentPage }: PortfolioProps) {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h1 className="mb-4 text-gray-900">Featured Projects</h1>
@@ -254,9 +252,6 @@ export function Portfolio({ setCurrentPage }: PortfolioProps) {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
             >
               <GlassCard delay={0}>
                 <div 
@@ -300,10 +295,6 @@ export function Portfolio({ setCurrentPage }: PortfolioProps) {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center"
         >
           <GlassCard delay={0}>
@@ -329,16 +320,12 @@ export function Portfolio({ setCurrentPage }: PortfolioProps) {
         <AnimatePresence>
           {selectedProjectData && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6"
               style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)' }}
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
-                initial={{ scale: 0.9, y: 50 }}
-                animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 50 }}
                 onClick={(e) => e.stopPropagation()}
                 className="relative max-w-5xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-2xl bg-gradient-to-br from-black/20 to-black/10 rounded-3xl border border-gray-200"

@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { AlertTriangle, TrendingDown, Zap } from 'lucide-react';
 
 export function ProblemSection() {
@@ -14,10 +15,6 @@ export function ProblemSection() {
         {/* Main headline */}
         <motion.div
           className="mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             If your system handles leads,
@@ -56,10 +53,6 @@ export function ProblemSection() {
               <motion.div
                 key={i}
                 className="group relative"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -80,10 +73,6 @@ export function ProblemSection() {
         {/* The gap explanation */}
         <motion.div
           className="relative group"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -103,10 +92,6 @@ export function ProblemSection() {
                     <motion.div
                       key={i}
                       className="flex items-center gap-3 text-gray-300"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 + i * 0.05 }}
-                      viewport={{ once: true }}
                     >
                       <div className="w-2 h-2 rounded-full bg-cyan-400" />
                       <p>{step}</p>
@@ -129,10 +114,6 @@ export function ProblemSection() {
                     <motion.div
                       key={i}
                       className="flex items-center gap-3 text-red-300"
-                      initial={{ opacity: 0, x: 10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 + i * 0.05 }}
-                      viewport={{ once: true }}
                     >
                       <div className="w-2 h-2 rounded-full bg-red-400" />
                       <p>{step}</p>
@@ -159,10 +140,6 @@ export function ProblemSection() {
         {/* Bridge to solution */}
         <motion.div
           className="mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
         >
           <div className="inline-block">
             <div className="text-6xl mb-6">↓</div>

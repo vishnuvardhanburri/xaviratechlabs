@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Send, Sparkles, Bot } from 'lucide-react';
@@ -61,8 +62,6 @@ export function AIAssistant() {
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -72,11 +71,9 @@ export function AIAssistant() {
             <div className="relative">
               <Bot className="w-7 h-7 text-white" />
               <motion.div
-                animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 0.8, 0.5],
                 }}
-                transition={{
                   duration: 2,
                   repeat: Infinity,
                   ease: 'easeInOut',
@@ -98,10 +95,7 @@ export function AIAssistant() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className={`fixed z-50 ${
               isMobile 
                 ? 'inset-4' 
@@ -118,11 +112,9 @@ export function AIAssistant() {
                       <Bot className="w-6 h-6 text-white" />
                     </div>
                     <motion.div
-                      animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.5, 1, 0.5],
                       }}
-                      transition={{
                         duration: 2,
                         repeat: Infinity,
                       }}
@@ -151,9 +143,6 @@ export function AIAssistant() {
               {messages.map((msg, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
@@ -170,25 +159,17 @@ export function AIAssistant() {
 
               {isTyping && (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
                   className="flex justify-start"
                 >
                   <div className="px-4 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm">
                     <div className="flex gap-1">
                       <motion.div
-                        animate={{ y: [0, -8, 0] }}
-                        transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
                         className="w-2 h-2 bg-gray-700 rounded-full"
                       />
                       <motion.div
-                        animate={{ y: [0, -8, 0] }}
-                        transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
                         className="w-2 h-2 bg-gray-700 rounded-full"
                       />
                       <motion.div
-                        animate={{ y: [0, -8, 0] }}
-                        transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
                         className="w-2 h-2 bg-gray-700 rounded-full"
                       />
                     </div>

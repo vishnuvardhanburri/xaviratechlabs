@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { useEffect, useState } from 'react';
 import { useIsMobile, usePrefersReducedMotion } from '../hooks/useIsMobile';
 
@@ -33,9 +34,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: isMobile ? 0.4 : 0.8 }}
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
     >
       {/* Animated Background - Simplified on mobile */}
@@ -56,9 +55,6 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
       <div className="relative z-10 text-center px-6">
         {/* XAVIRA GROUP Text Animation */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: isMobile ? 0.6 : 1, ease: 'easeOut' }}
           className="mb-8 md:mb-12"
         >
           <div className="flex flex-col items-center gap-2">
@@ -72,9 +68,6 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
                 'XAVIRA'.split('').map((letter, index) => (
                   <motion.span
                     key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
                       duration: 0.5,
                       delay: index * 0.1,
                       ease: 'easeOut',
@@ -89,9 +82,6 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
 
             {/* GROUP */}
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: isMobile ? 0.3 : 0.7, duration: isMobile ? 0.4 : 0.6 }}
               className="text-2xl md:text-4xl lg:text-6xl tracking-[0.2em] md:tracking-[0.3em] text-gray-800"
             >
               GROUP
@@ -101,9 +91,6 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
 
         {/* Progress Bar */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: isMobile ? 0.4 : 1, duration: 0.5 }}
           className="w-48 md:w-64 lg:w-96 mx-auto"
         >
           <div className="relative h-1 bg-gray-200 rounded-full overflow-hidden">
@@ -112,15 +99,11 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
               style={{
                 width: `${progress}%`,
               }}
-              transition={{ duration: 0.3 }}
             />
           </div>
           
           {/* Loading Text */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: isMobile ? 0.5 : 1.2, duration: 0.5 }}
             className="mt-4 text-gray-600 text-xs md:text-sm"
           >
             Loading Experience... {progress}%
@@ -130,11 +113,9 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
         {/* Pulsing Glow Effect - Desktop only */}
         {!isMobile && !prefersReducedMotion && (
           <motion.div
-            animate={{
               opacity: [0.2, 0.4, 0.2],
               scale: [1, 1.1, 1],
             }}
-            transition={{
               duration: 2,
               repeat: Infinity,
               ease: 'easeInOut',

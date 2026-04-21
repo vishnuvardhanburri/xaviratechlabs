@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { Menu, X, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
@@ -25,9 +26,6 @@ export function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
     return (
       <>
         <motion.nav
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.4 }}
           className="fixed top-0 left-0 right-0 z-50 px-4 py-3"
         >
           <div className="backdrop-blur-xl bg-white/80 rounded-xl border border-gray-300 shadow-lg px-4 py-3">
@@ -64,17 +62,12 @@ export function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               <motion.div
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
-                transition={{ delay: 0.1 }}
                 className="pt-24 px-6"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -82,9 +75,6 @@ export function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
                   {navLinks.map((link, index) => (
                     <motion.button
                       key={link}
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.1 + index * 0.05 }}
                       onClick={() => handleNavClick(link)}
                       className={`w-full text-left px-6 py-4 rounded-xl transition-colors ${
                         currentPage === link.toLowerCase()
@@ -107,9 +97,6 @@ export function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
   // Desktop Navbar
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
     >
       <div className="max-w-7xl mx-auto">

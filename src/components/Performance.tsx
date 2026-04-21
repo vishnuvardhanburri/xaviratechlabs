@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { CheckCircle2, Zap, Shield, Rocket } from 'lucide-react';
 
 export function Performance() {
@@ -63,10 +64,6 @@ export function Performance() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
           Enterprise <span className="text-cyan-400">Grade</span>
@@ -84,10 +81,6 @@ export function Performance() {
             <motion.div
               key={i}
               className="group relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
               {/* Glow effect */}
@@ -117,10 +110,6 @@ export function Performance() {
                     <motion.div
                       key={j}
                       className="flex items-center gap-2 text-sm text-gray-300"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: i * 0.1 + j * 0.05 }}
-                      viewport={{ once: true }}
                     >
                       <div className={`w-2 h-2 rounded-full ${metric.statusColor}`} />
                       {detail}
@@ -131,8 +120,6 @@ export function Performance() {
                 {/* Live indicator */}
                 <motion.div
                   className="mt-6 pt-6 border-t border-cyan-500/10 flex items-center gap-2"
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity }}
                 >
                   <div className="w-2 h-2 rounded-full bg-green-400" />
                   <span className="text-xs text-gray-500">Monitored 24/7</span>
@@ -146,10 +133,6 @@ export function Performance() {
       {/* Additional stats */}
       <motion.div
         className="relative group"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        viewport={{ once: true }}
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -164,10 +147,6 @@ export function Performance() {
               <motion.div
                 key={i}
                 className="text-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
               >
                 <p className="text-4xl mb-2">{stat.icon}</p>
                 <p className="text-3xl font-bold text-cyan-300 mb-2">{stat.value}</p>

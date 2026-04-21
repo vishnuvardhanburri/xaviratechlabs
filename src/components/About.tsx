@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calendar, Users, Target, Award, ChevronDown, Mail } from 'lucide-react';
@@ -71,9 +72,6 @@ export function About() {
         {/* Founder Bio Section */}
         <section className="mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             className="relative backdrop-blur-2xl bg-gradient-to-br from-black/10 to-black/5 rounded-3xl border border-gray-200 p-12"
             style={{
               boxShadow: '0 0 60px rgba(0,0,0,0.18), inset 0 0 40px rgba(0,0,0,0.06)',
@@ -82,9 +80,6 @@ export function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
                   className="relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-black/5 rounded-2xl blur-2xl" />
@@ -98,9 +93,6 @@ export function About() {
 
               <div>
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
                 >
                   <h2 className="mb-4 text-gray-900">Vishnu Vardhan Burri</h2>
                   <p className="text-xl text-gray-700 mb-6">Founder & CEO</p>
@@ -141,10 +133,6 @@ export function About() {
         {/* Interactive Timeline */}
         <section className="mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
             <h2 className="mb-4 text-gray-900">Our Journey</h2>
@@ -159,10 +147,6 @@ export function About() {
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
                   className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
                 >
                   <div className={`w-1/2 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
@@ -178,8 +162,6 @@ export function About() {
                         <AnimatePresence>
                           {expandedMilestone === index && (
                             <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                             >
                               <p className="text-gray-500 text-sm">{milestone.details}</p>
@@ -210,10 +192,6 @@ export function About() {
         {/* Mission Accordion */}
         <section className="mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
             <GlassCard delay={0}>
               <div className="p-8">
@@ -258,10 +236,6 @@ export function About() {
         {/* Client Stories Carousel */}
         <section>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
             <h2 className="mb-4 text-gray-900">Client Success Stories</h2>

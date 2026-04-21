@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { ArrowUpRight, TrendingUp } from 'lucide-react';
 
 export function CaseStudies() {
@@ -67,10 +68,6 @@ export function CaseStudies() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
           Results That <span className="text-cyan-400">Scale</span>
@@ -86,10 +83,6 @@ export function CaseStudies() {
           <motion.div
             key={i}
             className="group relative"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
           >
             <div className={`absolute -inset-1 bg-gradient-to-r ${study.color} rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
 
@@ -125,10 +118,6 @@ export function CaseStudies() {
                   <motion.div
                     key={key}
                     className="text-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
                   >
                     <div className="flex items-center justify-center gap-1 mb-2">
                       {(typeof value === 'string' && (value.includes('+') || value.includes('%') || value.includes('x'))) && (
@@ -150,10 +139,6 @@ export function CaseStudies() {
       {/* Summary stats */}
       <motion.div
         className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
       >
         {[
           { label: 'Average Reply Rate', value: '34%', color: 'from-cyan-500 to-blue-600' },

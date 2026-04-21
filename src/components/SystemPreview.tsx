@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Activity, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export function SystemPreview() {
@@ -18,10 +19,6 @@ export function SystemPreview() {
       {/* Section header */}
       <motion.div
         className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
           System is <span className="text-green-400">Running</span>
@@ -42,10 +39,6 @@ export function SystemPreview() {
           <motion.div
             key={i}
             className="relative group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
           >
             {/* Glow on hover */}
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -77,10 +70,6 @@ export function SystemPreview() {
       {/* Live logs */}
       <motion.div
         className="relative group"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -89,8 +78,6 @@ export function SystemPreview() {
           <div className="flex items-center gap-3 mb-6 pb-4 border-b border-cyan-500/10">
             <motion.div
               className="w-3 h-3 rounded-full bg-green-400"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
             />
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Activity className="w-5 h-5 text-cyan-400" />
@@ -105,10 +92,6 @@ export function SystemPreview() {
               <motion.div
                 key={i}
                 className="flex items-start gap-3 text-sm"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                viewport={{ once: true }}
               >
                 <span className="text-cyan-400 mt-1 flex-shrink-0">
                   {log.includes('✓') ? <CheckCircle2 className="w-4 h-4" /> : <AlertCircle className="w-4 h-4" />}
@@ -124,8 +107,6 @@ export function SystemPreview() {
           <div className="mt-4 pt-4 border-t border-cyan-500/10 text-center">
             <motion.p
               className="text-xs text-gray-500"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
             >
               Logs update in real-time • System operating normally
             </motion.p>
@@ -136,10 +117,6 @@ export function SystemPreview() {
       {/* Info text */}
       <motion.div
         className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        viewport={{ once: true }}
       >
         {[
           {

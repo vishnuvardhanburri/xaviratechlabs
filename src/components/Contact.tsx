@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle } from 'lucide-react';
@@ -96,9 +97,6 @@ export function Contact() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
           <h1 className="mb-4 text-white">Get In Touch</h1>
@@ -108,9 +106,6 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
           >
             <GlassCard delay={0}>
               <div className="p-8 bg-gradient-to-br from-black/10 to-black/5">
@@ -194,9 +189,6 @@ export function Contact() {
 
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
           >
             <div className="space-y-6">
               <GlassCard delay={0}>
@@ -292,8 +284,6 @@ export function Contact() {
       <AnimatePresence>
         {showSuccess && (
           <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50"
           >
@@ -316,8 +306,6 @@ export function Contact() {
       <AnimatePresence>
         {showError && (
           <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 max-w-2xl mx-4"
           >

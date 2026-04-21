@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { ArrowRight } from 'lucide-react';
 
 export function Flow() {
@@ -17,10 +18,6 @@ export function Flow() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
           The <span className="text-cyan-400">Outbound Flow</span>
@@ -37,16 +34,11 @@ export function Flow() {
             <motion.div
               key={i}
               className="flex items-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
             >
               {/* Step node */}
               <motion.div
                 className="group cursor-pointer"
                 whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
                 <div className="relative">
                   {/* Glow effect */}
@@ -65,7 +57,6 @@ export function Flow() {
                   {/* Hover tooltip */}
                   <motion.div
                     className="absolute -top-16 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                    initial={{ y: 10 }}
                     whileHover={{ y: 0 }}
                   >
                     <div className="bg-gray-900 border border-cyan-500/30 rounded px-3 py-2 whitespace-nowrap text-xs text-cyan-300">
@@ -79,8 +70,6 @@ export function Flow() {
               {i < steps.length - 1 && (
                 <motion.div
                   className="flex-shrink-0 w-16 h-1 mx-2 bg-gradient-to-r from-cyan-500/30 to-transparent relative group/arrow"
-                  animate={{ x: [0, 8, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
                 >
                   <ArrowRight className="absolute right-0 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
                 </motion.div>
@@ -93,10 +82,6 @@ export function Flow() {
       {/* Description cards */}
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
       >
         {[
           {
@@ -133,10 +118,6 @@ export function Flow() {
           <motion.div
             key={i}
             className="group relative"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

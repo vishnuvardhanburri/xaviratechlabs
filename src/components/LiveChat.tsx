@@ -51,10 +51,7 @@ export function LiveChat() {
         {isOpen && (
           <motion.div
             className="fixed bottom-24 right-8 z-40 w-96 max-h-96 bg-gradient-to-b from-gray-900/95 to-gray-950/95 border border-cyan-500/30 rounded-lg shadow-2xl flex flex-col overflow-hidden backdrop-blur-md"
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 }}
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border-b border-cyan-500/20 p-4">
@@ -67,9 +64,6 @@ export function LiveChat() {
               {messages.map((msg, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div

@@ -1,6 +1,7 @@
 "use client";
+"use client";
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from './motion-mock';
 import { 
   Code, Cpu, Cloud, Shield, Palette, Briefcase, 
   CheckCircle, Lock, Zap, Users, TrendingUp, Star,
@@ -99,9 +100,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="mb-12 md:mb-16 text-center"
         >
           <span className="inline-block px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-sm text-black mb-6">
@@ -120,10 +118,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
           {mainServices.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
               className={`
@@ -159,10 +153,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
 
         {/* Why Us Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="mb-20"
         >
           <h2 className="text-center mb-12 text-gray-900">Why Choose Xavira</h2>
@@ -173,10 +163,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
               {whyUs.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl border border-gray-300 hover:border-black transition-all hover:shadow-lg min-w-[180px]"
                 >
                   <div className="text-black">{item.icon}</div>
@@ -191,10 +177,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
             {whyUs.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.3 }}
                 className="flex flex-col items-center gap-3 p-4 bg-white rounded-xl border border-gray-300"
               >
                 <div className="text-black">{item.icon}</div>
@@ -206,10 +188,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
 
         {/* Featured Work */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-12">
             <h2 className="mb-4 text-gray-900">Featured Work</h2>
@@ -220,10 +198,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
                 className="group relative bg-white rounded-2xl border-2 border-gray-300 overflow-hidden hover:shadow-2xl transition-all duration-500"
               >
                 {/* Device Mockup (CSS Only) */}
@@ -260,7 +234,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
 
                 {/* Hover Overlay */}
                 <motion.div
-                  initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   className="absolute inset-0 bg-black/95 flex items-center justify-center"
                 >
@@ -276,10 +249,6 @@ export function Services({ setCurrentPage }: ServicesProps) {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="mt-20"
         >
           <div className="relative overflow-hidden rounded-3xl bg-black p-12 md:p-16 text-center">

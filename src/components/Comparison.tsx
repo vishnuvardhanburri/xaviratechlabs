@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { CheckCircle2, X } from 'lucide-react';
 
 export function Comparison() {
@@ -26,20 +27,12 @@ export function Comparison() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
           Why Different
         </h2>
         <motion.p
           className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           "Apollo gives data. Instantly automates emails.
           <br />
@@ -52,10 +45,6 @@ export function Comparison() {
         {/* Left side - The problem with tools */}
         <motion.div
           className="relative group"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -73,10 +62,6 @@ export function Comparison() {
                 <motion.div
                   key={i}
                   className="flex items-start gap-3"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  viewport={{ once: true }}
                 >
                   <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
                   <p className="text-gray-300">{item}</p>
@@ -89,10 +74,6 @@ export function Comparison() {
         {/* Right side - Xavira infrastructure */}
         <motion.div
           className="relative group"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -110,10 +91,6 @@ export function Comparison() {
                 <motion.div
                   key={i}
                   className="flex items-start gap-3"
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  viewport={{ once: true }}
                 >
                   <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
                   <p className="text-gray-300">{item}</p>
@@ -127,10 +104,6 @@ export function Comparison() {
       {/* Comparison table */}
       <motion.div
         className="relative group"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -157,10 +130,6 @@ export function Comparison() {
                   <motion.tr
                     key={i}
                     className="border-b border-cyan-500/10 hover:bg-cyan-500/5 transition-colors"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
-                    viewport={{ once: true }}
                   >
                     <td className="px-6 py-4 text-gray-300 font-medium">{item.feature}</td>
                     <td className="px-6 py-4 text-center">

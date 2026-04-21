@@ -1,6 +1,4 @@
-'use client';
-
-import { Calendar, Mail, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { Calendar, Mail, CheckCircle2 } from 'lucide-react';
 
 export default function DemoContent() {
   return (
@@ -8,21 +6,15 @@ export default function DemoContent() {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] w-full overflow-hidden bg-gradient-to-b from-[#0b0b0f] via-[#1a1a2e] to-[#0b0b0f] flex items-center justify-center px-8">
         <div className="max-w-4xl mx-auto text-center py-32">
-          <h1
-            className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-          >
+          <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Book Your <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Demo</span>
           </h1>
 
-          <p
-            className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
-          >
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             See Xavira in action. Experience how our autonomous outbound infrastructure generates real conversations without manual intervention.
           </p>
 
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://cal.com/vishnuvardhanburri/30min"
               target="_blank"
@@ -44,16 +36,12 @@ export default function DemoContent() {
 
       {/* What to Expect */}
       <section className="relative py-24 px-8 lg:px-16 max-w-4xl mx-auto">
-        <h2
-          className="text-4xl font-bold text-white text-center mb-16"
-        >
+        <h2 className="text-4xl font-bold text-white text-center mb-16">
           What to Expect
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <div className="flex gap-4">
               <div className="w-6 h-6 bg-cyan-500/20 rounded flex-shrink-0" />
               <div>
@@ -87,9 +75,7 @@ export default function DemoContent() {
             </div>
           </div>
 
-          <div
-            className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-8 border border-cyan-500/30"
-          >
+          <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-8 border border-cyan-500/30">
             <div className="aspect-w-16 aspect-h-9 mb-6">
               <div className="bg-gray-800/50 rounded-lg h-64 flex items-center justify-center">
                 <div className="text-center">
@@ -120,9 +106,7 @@ export default function DemoContent() {
 
       {/* CTA Section */}
       <section className="relative py-24 px-8 lg:px-16 text-center bg-gradient-to-b from-[#1a1a2e] to-[#0b0b0f]">
-        <div
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Transform Your Outbound?
           </h2>

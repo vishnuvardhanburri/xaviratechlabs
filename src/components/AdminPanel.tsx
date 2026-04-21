@@ -1,6 +1,7 @@
 "use client";
+"use client";
 import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion } from './motion-mock';
 import { Mail, Calendar, Tag, MessageSquare, RefreshCw, Download, Phone } from 'lucide-react';
 import { GlassCard } from './GlassCard';
 import { ParticleBackground } from './ParticleBackground';
@@ -79,9 +80,6 @@ export function AdminPanel() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
           <h1 className="mb-4 text-gray-900">Contact Form Submissions</h1>
@@ -146,9 +144,6 @@ export function AdminPanel() {
             {submissions.map((submission, index) => (
               <motion.div
                 key={submission.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
               >
                 <GlassCard delay={0}>
                   <div className="p-6">

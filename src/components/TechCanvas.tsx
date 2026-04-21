@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useEffect, useRef } from 'react';
 import { useIsMobile, usePrefersReducedMotion } from '../hooks/useIsMobile';
 

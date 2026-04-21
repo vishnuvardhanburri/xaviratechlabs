@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { Star } from 'lucide-react';
 
 export function Testimonials() {
@@ -43,10 +44,6 @@ export function Testimonials() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
           Trusted by <span className="text-cyan-400">Enterprise Teams</span>
@@ -62,10 +59,6 @@ export function Testimonials() {
           <motion.div
             key={i}
             className="group relative"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
           >
             <div className={`absolute -inset-1 bg-gradient-to-r ${testimonial.color} rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
 
@@ -96,10 +89,6 @@ export function Testimonials() {
       {/* Trust badge */}
       <motion.div
         className="mt-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
       >
         <p className="text-gray-400">
           Serving <span className="text-cyan-400 font-bold">50+ companies</span> across{' '}

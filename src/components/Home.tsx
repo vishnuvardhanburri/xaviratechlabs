@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -24,9 +25,6 @@ export function Home({ setCurrentPage }: HomeProps) {
       
       <div className="relative z-10 text-center max-w-xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
           <div className="mb-6">
             <h1 className="text-4xl tracking-[0.2em] text-black mb-2">
@@ -69,15 +67,9 @@ export function Home({ setCurrentPage }: HomeProps) {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="inline-block px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-sm text-black mb-8">
               ⚡ GLOBAL TECHNOLOGY LEADER
@@ -85,9 +77,6 @@ export function Home({ setCurrentPage }: HomeProps) {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-6"
           >
             <span className="block text-gray-900">Powering the Future of</span>
@@ -97,18 +86,12 @@ export function Home({ setCurrentPage }: HomeProps) {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
             className="text-gray-700 text-lg mb-8 leading-relaxed"
           >
             We deliver enterprise-grade AI solutions, cutting-edge development, and transformative design to Fortune 500 companies and ambitious startups worldwide. Experience innovation that drives measurable results.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap gap-4 mb-8"
           >
             <button
@@ -131,9 +114,6 @@ export function Home({ setCurrentPage }: HomeProps) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
             className="flex items-center gap-8"
           >
             <div>
@@ -155,9 +135,6 @@ export function Home({ setCurrentPage }: HomeProps) {
 
         {/* Right Visual - Enhanced Xavira Box */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
           className="relative hidden lg:block"
         >
           <div className="relative">
@@ -171,9 +148,6 @@ export function Home({ setCurrentPage }: HomeProps) {
                 {/* Top Section - Brand */}
                 <div className="p-8 bg-black text-center">
                   <motion.div
-                    initial={{ scale: 0.9 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
                   >
                     <h2 className="text-5xl tracking-[0.3em] text-white mb-2">XAVIRA</h2>
                     <p className="text-xl text-white/90 tracking-wider">TECH LABS</p>
@@ -225,22 +199,18 @@ export function Home({ setCurrentPage }: HomeProps) {
 
               {/* Floating Elements */}
               <motion.div
-                animate={{ 
                   y: [0, -10, 0],
                   rotate: [0, 5, 0]
                 }}
-                transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -top-6 -right-6 w-20 h-20 bg-black rounded-2xl shadow-xl flex items-center justify-center"
               >
                 <Award className="w-10 h-10 text-white" />
               </motion.div>
 
               <motion.div
-                animate={{ 
                   y: [0, 10, 0],
                   rotate: [0, -5, 0]
                 }}
-                transition={{ duration: 4, repeat: Infinity }}
                 className="absolute -bottom-6 -left-6 w-20 h-20 bg-gray-800 rounded-2xl shadow-xl flex items-center justify-center"
               >
                 <TrendingUp className="w-10 h-10 text-white" />
@@ -261,17 +231,12 @@ export function Home({ setCurrentPage }: HomeProps) {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/60 backdrop-blur-md overflow-y-auto"
             onClick={() => setShowIntro(false)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-5xl my-8 backdrop-blur-2xl bg-white/95 rounded-3xl border border-gray-300 shadow-2xl p-6 md:p-10"
             >

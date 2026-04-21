@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'motion/react';
+import { motion } from './motion-mock';
 import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
@@ -22,9 +22,6 @@ export function Navbar() {
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
     >
       <div className="px-8 lg:px-16 max-w-7xl mx-auto flex items-center justify-between h-20">
         {/* Logo */}
@@ -53,7 +50,6 @@ export function Navbar() {
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600"
                   layoutId="navbar-underline"
-                  transition={{ duration: 0.3 }}
                 />
               )}
             </Link>
@@ -85,8 +81,6 @@ export function Navbar() {
         {isOpen && (
           <motion.div
             className="absolute top-20 left-0 right-0 bg-gradient-to-b from-[#0b0b0f] to-[#1a1a2e] border-b border-cyan-500/20 p-8 flex flex-col gap-4 lg:hidden"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
           >
             {navLinks.map((link) => (
               <Link

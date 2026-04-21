@@ -1,5 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
+"use client";
+import { motion } from './motion-mock';
 import { ArrowRight, Code2, Box, Zap } from 'lucide-react';
 
 export function AboutEvolution() {
@@ -8,10 +9,6 @@ export function AboutEvolution() {
       {/* Section header */}
       <motion.div
         className="mb-20 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
           Built by Engineers
@@ -25,10 +22,6 @@ export function AboutEvolution() {
         {/* Phase 1: VishnuLabs */}
         <motion.div
           className="group relative"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0 }}
-          viewport={{ once: true }}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -70,10 +63,6 @@ export function AboutEvolution() {
         {/* Arrow */}
         <motion.div
           className="hidden lg:flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           <div className="flex flex-col items-center gap-4">
             <ArrowRight className="w-6 h-6 text-cyan-400 rotate-90 lg:rotate-0" />
@@ -85,10 +74,6 @@ export function AboutEvolution() {
         {/* Phase 2: Xavira */}
         <motion.div
           className="group relative lg:col-start-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -131,10 +116,6 @@ export function AboutEvolution() {
       {/* Core belief */}
       <motion.div
         className="relative group"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        viewport={{ once: true }}
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -142,10 +123,6 @@ export function AboutEvolution() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Principle 1 */}
             <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
             >
               <h4 className="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
                 <Box className="w-5 h-5" />
@@ -159,10 +136,6 @@ export function AboutEvolution() {
 
             {/* Principle 2 */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
             >
               <h4 className="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5" />
@@ -176,10 +149,6 @@ export function AboutEvolution() {
 
             {/* Principle 3 */}
             <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
             >
               <h4 className="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
                 <Code2 className="w-5 h-5" />
@@ -196,10 +165,6 @@ export function AboutEvolution() {
           <div className="mt-12 pt-12 border-t border-cyan-500/20">
             <motion.p
               className="text-center text-xl font-bold text-white"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              viewport={{ once: true }}
             >
               <span className="text-cyan-400">This is not a tool.</span> This is infrastructure built by engineers who
               understand failure.

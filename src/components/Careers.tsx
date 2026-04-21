@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -500,9 +501,6 @@ export function Careers() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="mb-12"
         >
           <span className="inline-block px-4 py-2 bg-black/5 border border-gray-200 rounded-full text-sm text-gray-700 mb-6">
@@ -546,9 +544,6 @@ export function Careers() {
           {divisions.map((division) => (
             <TabsContent key={division.id} value={division.id}>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                   {division.jobs.map((job, index) => {
@@ -563,9 +558,6 @@ export function Careers() {
                     return (
                       <motion.div
                         key={job.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.06, duration: 0.36 }}
                         whileHover={{ scale: 1.03 }}
                         onClick={() => setSelectedJob(job)}
                         className={`relative group ${surfaceClass} border ${division.borderColor} p-6 cursor-pointer ${hoverClass} transition-all duration-150`}
@@ -611,15 +603,11 @@ export function Careers() {
         <AnimatePresence>
           {selectedJob && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
               onClick={() => setSelectedJob(null)}
             >
               <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
                 className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-2xl bg-gradient-to-br from-black/20 to-black/10 rounded-3xl border border-gray-200 p-6 md:p-8"
