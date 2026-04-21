@@ -4,7 +4,8 @@ import { Calendar, Users, Target, Award, ChevronDown, Mail } from 'lucide-react'
 import { GlassCard } from './GlassCard';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
-import founderPhoto from 'figma:asset/0562f0e6e0030c30896e2ca2a9067e3044a02c06.png';
+// Placeholder for founder photo - replace with actual image
+const founderPhoto = { src: '/api/placeholder/400/400' };
 
 export function About() {
   const [expandedMilestone, setExpandedMilestone] = useState<number | null>(null);
@@ -87,7 +88,7 @@ export function About() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-black/5 rounded-2xl blur-2xl" />
                   <img
-                    src={founderPhoto}
+                    src={founderPhoto.src}
                     alt="Vishnu Vardhan Burri - Founder & CEO"
                     className="relative rounded-2xl border-2 border-gray-200 w-full object-cover"
                   />
