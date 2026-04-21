@@ -1,93 +1,134 @@
-"use client";
-"use client";
-import { motion } from './motion-mock';
-import { Linkedin, Github, Mail } from 'lucide-react';
+'use client';
 
-interface FooterProps {
-  onNavigateToAdmin?: () => void;
-}
-
-export function Footer({ onNavigateToAdmin }: FooterProps = {}) {
+export function Footer() {
   return (
-    <footer className="relative mt-20 px-6 py-8">
-      <div className="max-w-7xl mx-auto">
-        <div
-          className="relative backdrop-blur-xl bg-gray-50 rounded-2xl border border-gray-300 p-8 shadow-lg"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Copyright */}
-            <div className="text-center md:text-left">
-              <p className="text-gray-700">
-                Copyright © 2025 <span className="text-black">Xavira Tech Labs</span>
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Part of Xavira Group • All rights reserved
-                {onNavigateToAdmin && (
-                  <>
-                    {' • '}
-                    <button
-                      onClick={onNavigateToAdmin}
-                      className="text-gray-500 hover:text-black transition-colors"
-                      title="Admin Panel"
-                    >
-                      Admin
-                    </button>
-                  </>
-                )}
-              </p>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center justify-center gap-6">
-              <motion.a
+    <footer className="bg-black border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-4">Xavira</h3>
+            <p className="text-gray-400 mb-4">
+              Autonomous outbound infrastructure built by systems engineers for enterprise reliability.
+            </p>
+            <div className="flex space-x-4">
+              <a
                 href="https://www.linkedin.com/company/xaviratech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 transition-all"
-                whileHover={{ scale: 1.1, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                title="Xavira Tech Labs on LinkedIn"
+                className="text-gray-400 hover:text-white transition-colors"
               >
-                <Linkedin className="w-5 h-5 text-black" />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/vishnu-vardhanburri/"
+                LinkedIn
+              </a>
+              <a
+                href="https://twitter.com/xavira"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 transition-all"
-                whileHover={{ scale: 1.1, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                title="Connect with Vishnu Vardhan Burri on LinkedIn"
+                className="text-gray-400 hover:text-white transition-colors"
               >
-                <Linkedin className="w-5 h-5 text-black" />
-              </motion.a>
-              <motion.a
-                href="mailto:xavira.group@gmail.com"
-                className="p-3 rounded-lg bg-gray-100 border border-gray-300 hover:bg-gray-200 transition-all"
-                whileHover={{ scale: 1.1, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                title="Email us"
-              >
-                <Mail className="w-5 h-5 text-black" />
-              </motion.a>
+                Twitter
+              </a>
             </div>
+          </div>
 
-            {/* Contact Email */}
-            <div className="text-center md:text-right">
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center justify-center md:justify-end gap-2">
-                  <Mail className="w-4 h-4 text-black" />
-                  <a
-                    href="mailto:xavira.group@gmail.com"
-                    className="text-gray-700 hover:text-black transition-colors"
-                  >
-                    xavira.group@gmail.com
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600">
-                  CEO: vishnuvardhanburri19@gmail.com
-                </p>
-              </div>
+          {/* Product */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Product</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/product" className="text-gray-400 hover:text-white transition-colors">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className="text-gray-400 hover:text-white transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/demo" className="text-gray-400 hover:text-white transition-colors">
+                  Demo
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-gray-400 hover:text-white transition-colors">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/about" className="text-gray-400 hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/careers" className="text-gray-400 hover:text-white transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="text-gray-400 hover:text-white transition-colors">
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="/security" className="text-gray-400 hover:text-white transition-colors">
+                  Security
+                </a>
+              </li>
+              <li>
+                <a href="/compliance" className="text-gray-400 hover:text-white transition-colors">
+                  Compliance
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © 2024 Xavira Group. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Privacy
+              </a>
+              <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Terms
+              </a>
+              <a href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Cookies
+              </a>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import { TrustEngineering } from '@/components/TrustEngineering';
+import TrustEngineering from '@/components/TrustEngineering';
 import { Testimonials } from '@/components/Testimonials';
-import { LandingFooter } from '@/components/LandingFooter';
+import LandingFooter from '@/components/LandingFooter';
 import AboutContent from '@/components/AboutContent';
 
 export const metadata = {

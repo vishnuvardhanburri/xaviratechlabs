@@ -1,92 +1,63 @@
-"use client";
-"use client";
-import { motion } from './motion-mock';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+'use client';
 
-export function LandingNavbar() {
-  const [isOpen, setIsOpen] = useState(false);
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function LandingNavbar() {
+  const pathname = usePathname();
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10">
       <div className="px-8 lg:px-16 max-w-7xl mx-auto flex items-center justify-between h-20">
         {/* Logo */}
-        <motion.div
-          className="flex items-center gap-2 font-bold text-xl"
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center">
-            <span className="text-white font-bold">X</span>
-          </div>
-          <span className="text-white hidden sm:inline">Xavira</span>
-        </motion.div>
+        <Link href="/" className="text-2xl font-bold text-white">
+          Xavira
+        </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden lg:flex items-center gap-12">
-          <a href="#how-it-works" className="text-gray-300 hover:text-cyan-300 transition-colors text-sm">
-            Why Different
-          </a>
-          <a href="#agents" className="text-gray-300 hover:text-cyan-300 transition-colors text-sm">
-            Architecture
-          </a>
-          <a href="#pricing" className="text-gray-300 hover:text-cyan-300 transition-colors text-sm">
-            Pricing
-          </a>
-          <a href="#trust" className="text-gray-300 hover:text-cyan-300 transition-colors text-sm">
-            Built by Engineers
-          </a>
-          <a
-            href="https://cal.com/vishnuvardhanburri/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 rounded-lg border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 text-sm font-medium inline-block"
+        {/* Navigation Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          <Link
+            href="/product"
+            className={`text-sm font-medium transition-colors ${
+              pathname === '/product' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+            }`}
           >
-            Book Demo
-          </a>
+            Product
+          </Link>
+          <Link
+            href="/pricing"
+            className={`text-sm font-medium transition-colors ${
+              pathname === '/pricing' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+            }`}
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/demo"
+            className={`text-sm font-medium transition-colors ${
+              pathname === '/demo' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+            }`}
+          >
+            Demo
+          </Link>
+          <Link
+            href="/about"
+            className={`text-sm font-medium transition-colors ${
+              pathname === '/about' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+            }`}
+          >
+            About
+          </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden p-2"
-          onClick={() => setIsOpen(!isOpen)}
+        {/* CTA Button */}
+        <Link
+          href="/demo"
+          className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
         >
-          {isOpen ? (
-            <X className="w-6 h-6 text-cyan-400" />
-          ) : (
-            <Menu className="w-6 h-6 text-cyan-400" />
-          )}
-        </button>
-
-        {/* Mobile menu */}
-        {isOpen && (
-          <motion.div
-            className="absolute top-20 left-0 right-0 bg-gradient-to-b from-[#0b0b0f] to-[#1a1a2e] border-b border-cyan-500/20 p-8 flex flex-col gap-4 lg:hidden"
-          >
-            <a href="#how-it-works" className="text-gray-300 hover:text-cyan-300 transition-colors">
-              Why Different
-            </a>
-            <a href="#agents" className="text-gray-300 hover:text-cyan-300 transition-colors">
-              Architecture
-            </a>
-            <a href="#pricing" className="text-gray-300 hover:text-cyan-300 transition-colors">
-              Pricing
-            </a>
-            <a href="#trust" className="text-gray-300 hover:text-cyan-300 transition-colors">
-              Built by Engineers
-            </a>
-            <a
-              href="https://cal.com/vishnuvardhanburri/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium w-full inline-block text-center"
-            >
-              Book Demo
-            </a>
-          </motion.div>
-        )}
+          Book Demo
+        </Link>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

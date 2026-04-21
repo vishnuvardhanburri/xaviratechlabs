@@ -1,143 +1,88 @@
-"use client";
-"use client";
-import { motion } from './motion-mock';
-import { Activity, CheckCircle2, AlertCircle } from 'lucide-react';
+'use client';
 
-export function SystemPreview() {
-  const logs = [
-    'Email sent to john@acmecorp.com - Domain verified ✓',
-    'Reply received from sarah@techstartup.io - Stored for review',
-    'Spam check passed - 98.2% domain reputation',
-    'Email queued for alex@innovateltd.com - Processing...',
-    'Self-healing: Rebalanced load across 3 sending domains',
-    'Conversation starter: Detected 5 positive replies in past 2 hours',
-    'Email sent to mike@venturefund.com - Domain verified ✓',
-  ];
-
+export default function SystemPreview() {
   return (
-    <section className="relative py-24 px-8 lg:px-16 max-w-7xl mx-auto">
-      {/* Section header */}
-      <motion.div
-        className="mb-16"
-      >
-        <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
-          System is <span className="text-green-400">Running</span>
-        </h2>
-        <p className="text-xl text-gray-400">
-          Real-time transparency. Every email, every reply, every decision tracked.
-        </p>
-      </motion.div>
+    <section className="relative py-24 px-8 lg:px-16 bg-gradient-to-b from-[#1a1a2e] to-[#0b0b0f]">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Autonomous Outbound Infrastructure
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Multi-agent system designed to generate real conversations without manual intervention.
+          </p>
+        </div>
 
-      {/* Live stats grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        {[
-          { label: 'Emails/Day', value: '50,000+', icon: '📨', status: 'ACTIVE' },
-          { label: 'Reply Rate', value: '34%', icon: '↩️', status: 'STRONG' },
-          { label: 'Domain Health', value: '99.8%', icon: '🏥', status: 'SAFE' },
-          { label: 'Uptime', value: '99.99%', icon: '⚡', status: 'OPTIMAL' },
-        ].map((stat, i) => (
-          <motion.div
-            key={i}
-            className="relative group"
-          >
-            {/* Glow on hover */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border border-cyan-500/30">
+              <h3 className="text-xl font-semibold text-white mb-4">Core Components</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Multi-agent orchestration</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Natural language generation</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Real-time conversation tracking</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Deterministic execution</span>
+                </li>
+              </ul>
+            </div>
 
-            <div className="relative bg-gradient-to-b from-gray-900/80 to-gray-950/80 backdrop-blur-md border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-500/50 transition-all duration-300">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-2xl">{stat.icon}</span>
-                <div className={`px-2 py-1 rounded text-xs font-bold ${
-                  stat.status === 'ACTIVE' ? 'bg-green-500/20 text-green-300' :
-                  stat.status === 'STRONG' ? 'bg-blue-500/20 text-blue-300' :
-                  stat.status === 'SAFE' ? 'bg-cyan-500/20 text-cyan-300' :
-                  'bg-purple-500/20 text-purple-300'
-                }`}>
-                  {stat.status}
+            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border border-cyan-500/30">
+              <h3 className="text-xl font-semibold text-white mb-4">Enterprise Features</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">99.99% uptime SLA</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Horizontal scaling</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Custom integrations</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <span className="text-gray-300">Real-time monitoring</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-cyan-500/30">
+              <div className="aspect-video bg-gray-800/50 rounded-xl flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mx-auto flex items-center justify-center">
+                    <div className="w-8 h-8 bg-white rounded-full" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-white">System Architecture</h4>
+                  <p className="text-gray-300">Built for scale and reliability</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm mb-2">{stat.label}</p>
-              <motion.p
-                className="text-3xl font-bold text-cyan-300"
-                key={`${stat.label}-${Math.random()}`}
-              >
-                {stat.value}
-              </motion.p>
             </div>
-          </motion.div>
-        ))}
-      </div>
 
-      {/* Live logs */}
-      <motion.div
-        className="relative group"
-      >
-        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-        <div className="relative bg-gradient-to-b from-gray-900/80 to-gray-950/80 backdrop-blur-md border border-cyan-500/20 rounded-lg p-8">
-          {/* Header */}
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-cyan-500/10">
-            <motion.div
-              className="w-3 h-3 rounded-full bg-green-400"
-            />
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Activity className="w-5 h-5 text-cyan-400" />
-              Live Activity Feed
-            </h3>
-            <span className="ml-auto text-xs text-gray-400">Now</span>
-          </div>
-
-          {/* Logs */}
-          <div className="space-y-3 max-h-64 overflow-y-auto scrollbar-hide">
-            {logs.map((log, i) => (
-              <motion.div
-                key={i}
-                className="flex items-start gap-3 text-sm"
-              >
-                <span className="text-cyan-400 mt-1 flex-shrink-0">
-                  {log.includes('✓') ? <CheckCircle2 className="w-4 h-4" /> : <AlertCircle className="w-4 h-4" />}
-                </span>
-                <p className={log.includes('✓') ? 'text-gray-300' : log.includes('passed') ? 'text-green-300' : 'text-gray-400'}>
-                  {log}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Footer - scroll indicator */}
-          <div className="mt-4 pt-4 border-t border-cyan-500/10 text-center">
-            <motion.p
-              className="text-xs text-gray-500"
-            >
-              Logs update in real-time • System operating normally
-            </motion.p>
+            {/* Floating stats */}
+            <div className="absolute -top-4 -right-4 bg-black/80 backdrop-blur-xl rounded-lg px-4 py-2 border border-cyan-500/20">
+              <p className="text-cyan-400 font-semibold">34% Reply Rate</p>
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-black/80 backdrop-blur-xl rounded-lg px-4 py-2 border border-cyan-500/20">
+              <p className="text-cyan-400 font-semibold">Enterprise Scale</p>
+            </div>
           </div>
         </div>
-      </motion.div>
-
-      {/* Info text */}
-      <motion.div
-        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
-        {[
-          {
-            title: 'No Black Box',
-            description: 'See every email sent, every reply received, and every decision made.',
-          },
-          {
-            title: 'Real Results',
-            description: '34% average reply rate in 10 days. Real campaigns, real data.',
-          },
-          {
-            title: 'Always Running',
-            description: '99.99% uptime. Infrastructure built for enterprise scale.',
-          },
-        ].map((item, i) => (
-          <div key={i} className="text-center">
-            <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
-            <p className="text-gray-400">{item.description}</p>
-          </div>
-        ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

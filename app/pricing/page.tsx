@@ -1,7 +1,7 @@
 import { Pricing } from '@/components/Pricing';
 import { Testimonials } from '@/components/Testimonials';
 import { CaseStudies } from '@/components/CaseStudies';
-import { LandingFooter } from '@/components/LandingFooter';
+import LandingFooter from '@/components/LandingFooter';
 
 export const metadata = {
   title: 'Pricing | Xavira',

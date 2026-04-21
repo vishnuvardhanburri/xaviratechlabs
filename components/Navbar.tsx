@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
@@ -20,21 +19,13 @@ export function Navbar() {
   ];
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0b0b0f]/80 to-[#0b0b0f]/0 backdrop-blur-md border-b border-cyan-500/10">
       <div className="px-8 lg:px-16 max-w-7xl mx-auto flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl group">
-          <motion.div
-            className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-          >
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110">
             <span className="text-white font-bold">X</span>
-          </motion.div>
+          </div>
           <span className="text-white hidden sm:inline">Xavira</span>
         </Link>
 
@@ -50,11 +41,7 @@ export function Navbar() {
             >
               {link.label}
               {isActive(link.href) && (
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600"
-                  layoutId="navbar-underline"
-                  transition={{ duration: 0.3 }}
-                />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 transition-all duration-300" />
               )}
             </Link>
           ))}
@@ -83,11 +70,7 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <motion.div
-            className="absolute top-20 left-0 right-0 bg-gradient-to-b from-[#0b0b0f] to-[#1a1a2e] border-b border-cyan-500/20 p-8 flex flex-col gap-4 lg:hidden"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div className="absolute top-20 left-0 right-0 bg-gradient-to-b from-[#0b0b0f] to-[#1a1a2e] border-b border-cyan-500/20 p-8 flex flex-col gap-4 lg:hidden animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -108,9 +91,9 @@ export function Navbar() {
             >
               Book Demo
             </a>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.nav>
+    </nav>
   );
 }

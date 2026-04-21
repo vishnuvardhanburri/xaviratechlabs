@@ -1,134 +1,138 @@
-"use client";
-"use client";
-import { motion } from './motion-mock';
-import { ArrowRight } from 'lucide-react';
+'use client';
 
 export function Flow() {
-  const steps = [
-    { label: 'Lead', icon: '👤', color: 'from-blue-500 to-cyan-500' },
-    { label: 'Email', icon: '✉️', color: 'from-cyan-500 to-emerald-500' },
-    { label: 'Send', icon: '📤', color: 'from-emerald-500 to-teal-500' },
-    { label: 'Reply', icon: '↩️', color: 'from-teal-500 to-blue-500' },
-    { label: 'Decision', icon: '🎯', color: 'from-blue-500 to-purple-500' },
-    { label: 'Optimize', icon: '⚙️', color: 'from-purple-500 to-pink-500' },
-  ];
-
   return (
-    <section className="relative py-24 px-8 lg:px-16 max-w-7xl mx-auto">
-      {/* Section header */}
-      <motion.div
-        className="mb-20 text-center"
-      >
-        <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
-          The <span className="text-cyan-400">Outbound Flow</span>
-        </h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          From prospect data to real conversations. Every step automated, fully controlled.
-        </p>
-      </motion.div>
+    <section className="relative py-24 px-8 lg:px-16 bg-gradient-to-b from-[#1a1a2e] to-[#0b0b0f]">
+      <div className="max-w-7xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20 text-center">
+          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-4">
+            How It Works
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Autonomous infrastructure that generates real conversations without manual intervention.
+          </p>
+        </div>
 
-      {/* Flow diagram */}
-      <div className="overflow-x-auto pb-8">
-        <div className="flex items-center justify-center gap-0 min-w-max px-4 lg:px-0">
-          {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              className="flex items-center"
-            >
-              {/* Step node */}
-              <motion.div
-                className="group cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="relative">
-                  {/* Glow effect */}
-                  <motion.div
-                    className={`absolute -inset-4 bg-gradient-to-r ${step.color} rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-300`}
-                  />
+        {/* Flow Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">1</span>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-3">Setup</h3>
+            <p className="text-gray-300">
+              Connect your data sources and define your target audience. Takes less than 30 minutes.
+            </p>
+          </div>
 
-                  {/* Node */}
-                  <div className={`relative w-24 h-24 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg border-2 border-white/20 hover:border-white/50 transition-colors`}>
-                    <div className="text-center">
-                      <span className="text-4xl block mb-1">{step.icon}</span>
-                      <p className="text-xs font-bold text-white">{step.label}</p>
-                    </div>
-                  </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">2</span>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-3">Autonomous Operation</h3>
+            <p className="text-gray-300">
+              AI agents research prospects, craft personalized messages, and initiate conversations automatically.
+            </p>
+          </div>
 
-                  {/* Hover tooltip */}
-                  <motion.div
-                    className="absolute -top-16 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                    whileHover={{ y: 0 }}
-                  >
-                    <div className="bg-gray-900 border border-cyan-500/30 rounded px-3 py-2 whitespace-nowrap text-xs text-cyan-300">
-                      Step {i + 1}: {step.label}
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">3</span>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-3">Real Conversations</h3>
+            <p className="text-gray-300">
+              Handle replies, continue conversations, and schedule meetings without human intervention.
+            </p>
+          </div>
 
-              {/* Arrow */}
-              {i < steps.length - 1 && (
-                <motion.div
-                  className="flex-shrink-0 w-16 h-1 mx-2 bg-gradient-to-r from-cyan-500/30 to-transparent relative group/arrow"
-                >
-                  <ArrowRight className="absolute right-0 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
-                </motion.div>
-              )}
-            </motion.div>
-          ))}
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">4</span>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-3">Results</h3>
+            <p className="text-gray-300">
+              34% average reply rate with qualified leads flowing into your sales pipeline automatically.
+            </p>
+          </div>
+        </div>
+
+        {/* Technical Architecture */}
+        <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl p-8 border border-cyan-500/30">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            Technical Architecture
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold text-cyan-400 mb-3">Core Components</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Multi-agent orchestration system</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Natural language generation engine</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Real-time conversation tracking</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Deterministic execution framework</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold text-cyan-400 mb-3">Enterprise Features</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">99.99% uptime SLA guarantee</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Horizontal scaling architecture</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Custom integration capabilities</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <span className="text-gray-300">Real-time monitoring dashboard</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Performance Metrics */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-cyan-400 mb-2">34%</div>
+            <p className="text-gray-400">Reply Rate</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-cyan-400 mb-2">99.99%</div>
+            <p className="text-gray-400">Uptime</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-cyan-400 mb-2">&lt;1s</div>
+            <p className="text-gray-400">Response Time</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-cyan-400 mb-2">10M+</div>
+            <p className="text-gray-400">Conversations/Month</p>
+          </div>
         </div>
       </div>
-
-      {/* Description cards */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20"
-      >
-        {[
-          {
-            step: '1. Lead',
-            title: 'Data In',
-            description: 'Import prospects from any source. We handle deduplication, validation, and enrichment.',
-          },
-          {
-            step: '2. Email',
-            title: 'Composition',
-            description: 'AI-powered email generation with your templates and tone. Every email is unique.',
-          },
-          {
-            step: '3. Send',
-            title: 'Distribution',
-            description: 'Intelligent queuing across multiple verified domains. Spam checks built-in.',
-          },
-          {
-            step: '4. Reply',
-            title: 'Capture',
-            description: 'Track all replies automatically. Filter spam, categorize interest level.',
-          },
-          {
-            step: '5. Decision',
-            title: 'Next Steps',
-            description: 'AI decides: follow up, nurture, schedule meeting, or move to closed pipeline.',
-          },
-          {
-            step: '6. Optimize',
-            title: 'Self-Healing',
-            description: 'Learn from every campaign. Adjust timing, subject lines, sending domains automatically.',
-          },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            className="group relative"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative bg-gradient-to-b from-gray-900/80 to-gray-950/80 backdrop-blur-md border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-500/50 transition-all duration-300">
-              <p className="text-cyan-400 text-sm font-bold mb-2">{item.step}</p>
-              <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
     </section>
   );
 }

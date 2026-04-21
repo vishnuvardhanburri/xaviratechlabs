@@ -1,4 +1,4 @@
-import { LandingFooter } from '@/components/LandingFooter';
+import LandingFooter from '@/components/LandingFooter';
 import DemoContent from '@/components/DemoContent';
 
 export const metadata = {

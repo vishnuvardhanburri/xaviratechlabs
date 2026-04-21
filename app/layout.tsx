@@ -1,6 +1,6 @@
 import '../src/styles/globals.css';
-import { Navbar } from '@/components/NextNavbar';
-import { LiveChat } from '@/components/LiveChat';
+import Navbar from '@/components/NextNavbar';
+import LiveChat from '@/components/LiveChat';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 
 export default function RootLayout({
