@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Twitter } from 'lucide-react';
+import Link from 'next/link';
 
 export function LandingFooter() {
   const currentYear = new Date().getFullYear();
@@ -39,24 +40,24 @@ export function LandingFooter() {
             <h4 className="text-white font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/product" className="hover:text-cyan-400 transition-colors">
                   How It Works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/product" className="hover:text-cyan-400 transition-colors">
                   Agents
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/pricing" className="hover:text-cyan-400 transition-colors">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/product" className="hover:text-cyan-400 transition-colors">
                   Security
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -71,24 +72,24 @@ export function LandingFooter() {
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/about" className="hover:text-cyan-400 transition-colors">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/about" className="hover:text-cyan-400 transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/about" className="hover:text-cyan-400 transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Link href="/demo" className="hover:text-cyan-400 transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -128,15 +129,15 @@ export function LandingFooter() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <p>&copy; {currentYear} Xavira. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-cyan-400 transition-colors">
+            <Link href="/about" className="hover:text-cyan-400 transition-colors">
               Privacy
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
+            </Link>
+            <Link href="/about" className="hover:text-cyan-400 transition-colors">
               Terms
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
+            </Link>
+            <Link href="/about" className="hover:text-cyan-400 transition-colors">
               Status
-            </a>
+            </Link>
           </div>
         </div>
       </div>

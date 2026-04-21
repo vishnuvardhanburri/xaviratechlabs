@@ -442,29 +442,37 @@ export function Careers() {
 
       if (insertError) throw insertError;
 
-      // Send confirmation email to applicant
-      await fetch('/api/send-application-confirmation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          to: formData.email,
-          name: formData.fullName,
-          jobTitle: selectedJob.title,
-          division: selectedJob.division,
-        }),
-      });
+      // Send confirmation email to applicant (gracefully handle if API doesn't exist)
+      try {
+        await fetch('/api/send-application-confirmation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            to: formData.email,
+            name: formData.fullName,
+            jobTitle: selectedJob.title,
+            division: selectedJob.division,
+          }),
+        });
+      } catch (emailError) {
+        console.log('Confirmation email not sent (API not available):', emailError);
+      }
 
-      // Send notification to company
-      await fetch('/api/send-application-notification', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          jobTitle: selectedJob.title,
-          applicantName: formData.fullName,
-          applicantEmail: formData.email,
-          division: selectedJob.division,
-        }),
-      });
+      // Send notification to company (gracefully handle if API doesn't exist)
+      try {
+        await fetch('/api/send-application-notification', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            jobTitle: selectedJob.title,
+            applicantName: formData.fullName,
+            applicantEmail: formData.email,
+            division: selectedJob.division,
+          }),
+        });
+      } catch (notificationError) {
+        console.log('Notification not sent (API not available):', notificationError);
+      }
 
       toast.success('Application submitted successfully! We will contact you soon.');
       setSelectedJob(null);

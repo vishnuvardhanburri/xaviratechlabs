@@ -61,7 +61,7 @@ export function Hero() {
             Autonomous Outbound
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Infrastructure
+              Engine
             </span>
             <br />
             That Generates Conversations
@@ -119,7 +119,7 @@ export function Hero() {
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-cyan-500/10">
                 <h3 className="text-cyan-300 font-semibold flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  Live Outbound Engine
+                  Autonomous Outbound Engine
                 </h3>
                 <div className="flex gap-1">
                   <div className="w-3 h-3 rounded-full bg-gray-600" />

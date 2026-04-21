@@ -41,8 +41,8 @@ export function Contact() {
       // Send email notification (call Supabase Edge Function)
       try {
         const { data: { session } } = await supabase.auth.getSession();
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-        const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+        const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
         
         if (supabaseUrl && supabaseAnonKey) {
           await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
